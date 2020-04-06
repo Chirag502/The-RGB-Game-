@@ -1,0 +1,41 @@
+table{
+    margin:auto;
+    border-spacing: 7px;/*cellspacing technique*/
+    
+}
+.won{
+    display: flex;   
+    justify-content:space-around;
+    font-size:medium;
+    /* text-align: center; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    color: darkgrey;
+}
+
+#temp{
+    margin: auto;
+    width: 28%;
+}
+
+
+
+#rgb_name{
+    font-size: larger;
+    font-style: oblique;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+.box{
+   padding: 40px;
+   border-radius: 8px;
+    background: blue;;
+}
+body{
+    background: black;
+}
+h1{
+    color: chartreuse;
+    text-align: center;
+    text-transform: uppercase;
+}
