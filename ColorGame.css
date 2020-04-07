@@ -1,23 +1,30 @@
-table{
-    margin:auto;
-    border-spacing: 7px;/*cellspacing technique*/
-    
-}
+
 .won{
     display: flex;   
     justify-content:space-around;
     font-size:medium;
-    /* text-align: center; */
+    text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     color: darkgrey;
 }
-
-#temp{
-    margin: auto;
-    width: 28%;
+.bgcolor{
+    background-color: darkgoldenrod;
 }
 
+.hovering{
+    background-color: darkgoldenrod;
+}
+.box{
+    height: 100px;
+    border-radius: 10px;
+}
+@media(max-width:700px)
+{
+   .box  {
+        height: 75px;
+    }
+}
 
 
 #rgb_name{
@@ -26,16 +33,28 @@ table{
     font-family: 'Courier New', Courier, monospace;
     font-weight: lighter;
 }
-.box{
+/* .box{
+
+    justify-content: center;
+
    padding: 40px;
+   width: 56px;
+   height: 60px;
+   margin: 20px;
    border-radius: 8px;
-    background: blue;;
-}
+} */
 body{
     background: black;
 }
 h1{
     color: chartreuse;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 0px;
+    background-color:dimgray;
+}
+.newgame:hover,.hard:hover,.easy:hover{
+    background-color: darkgoldenrod;
 }
