@@ -1,27 +1,32 @@
 var n = 3;
-var pickedcolor="hello";
-var square=0;
+var pickedcolor;
+var square=[];
+var easyClicked = true;
+var newgame=document.querySelector(".newgame");
 var color1 = generateColors(n);
 var res = document.querySelector(".result");
-var easyClicked = true;
+
 var level2 = document.getElementById("level2")
 var p = level2.getElementsByTagName("div");
 var easy = document.querySelector(".easy");
 level2.style.display = "none";
-easy.classList.add("bgcolor")
+easy.classList.remove("textcolor");
+easy.classList.add("bgcolor");
+// easy.style.color="white";
 var hard = document.querySelector(".hard");
 generateSquare(color1);
-
-
-
 hard.addEventListener("click", function () {
     if (easyClicked) {
         easy.classList.remove("bgcolor")
-        document.querySelector("h1").style.backgroundColor = "dimgray";
-        document.querySelector("h1").style.color = "chartreuse"
+        document.querySelector("h1").style.backgroundColor = "#17a2b8";
+        document.querySelector("h1").style.color = "white"
         hard.classList.add("bgcolor")
+        hard.classList.remove("textcolor");
+        easy.classList.add("textcolor");
         level2.style.display = "flex";
         res.innerHTML="";
+        if(newgame.innerHTML=="Play Again?")
+        newgame.innerHTML = "New Colors";
         console.log("hard level selected"+ 3)
         for (var index = 0; index < p.length; index++) 
             p[index].classList.add("box");
@@ -34,11 +39,15 @@ hard.addEventListener("click", function () {
 
 easy.addEventListener("click", function () {
     if (!easyClicked) {
-        document.querySelector("h1").style.backgroundColor = "dimgray";
-        document.querySelector("h1").style.color = "chartreuse"
+        document.querySelector("h1").style.backgroundColor = "#17a2b8";
+        document.querySelector("h1").style.color = "white"
         res.innerHTML="";
+        if(newgame.innerHTML=="Play Again?")
+        newgame.innerHTML = "New Colors";
         hard.classList.remove("bgcolor")
         easy.classList.add("bgcolor")
+        easy.classList.remove("textcolor");
+        hard.classList.add("textcolor");
         level2.style.display = "none";
         easyClicked = true
         n = 3;
@@ -58,7 +67,7 @@ function generateSquare(color) {
     var min = 0
     var max = t.length;
    console.log("max: "+max)
-    var random=Math.floor(Math.random() * (max - min) + min);
+    var random=Math.floor(Math.random() * max );
     console.log("random: "+random);
     pickedcolor = color[random];
     rgbName.innerHTML = pickedcolor
@@ -73,6 +82,8 @@ function generateSquare(color) {
 
 function clicking () {
     var x = this.style.backgroundColor;
+    newgame.innerHTML="Play Again?";
+    console.log(newgame.innerHTML)
     if (x == pickedcolor) {
         res.innerHTML = "Correct!!";
         changeColors(x,square);
@@ -88,7 +99,7 @@ function changeColors(x,square) {
         square[j].style.backgroundColor = x;
     }
     document.querySelector("h1").style.backgroundColor = x
-    document.querySelector("h1").style.color = "white"
+    // document.querySelector("h1").style.color = "white"
 }
 
 
@@ -97,9 +108,9 @@ function generateColors(num) {
     var min = 0;
     var max = 256;
     for (var i = 0; i < num; i++) {
-        var r = Math.floor(Math.random() * (max - min) + min),
-            g = Math.floor(Math.random() * (max - min) + min),
-            b = Math.floor(Math.random() * (max - min) + min);
+        var r = Math.floor(Math.random() * max),
+            g = Math.floor(Math.random() * max),
+            b = Math.floor(Math.random() * max);
         var col = 'rgb(' + r + ', ' + g + ', ' + b + ')';
         console.log(col)
         arr.push(col)
@@ -107,3 +118,16 @@ function generateColors(num) {
     return arr;
 }
 
+
+newgame.addEventListener("click",function () {
+        color1=generateColors(n);
+        // newgame.innerHTML = "New Colors";
+        generateSquare(color1);
+        document.querySelector("h1").style.backgroundColor = "#17a2b8";
+        document.querySelector("h1").style.color = "white"
+        res.innerHTML="";
+        if(newgame.innerHTML=="Play Again?")
+            newgame.innerHTML = "New Colors";
+
+
+});

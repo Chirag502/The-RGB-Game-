@@ -9,30 +9,74 @@
     color: darkgrey;
 }
 .bgcolor{
-    background-color: darkgoldenrod;
+    background-color: #17a2b8;
+    color:white;
+}
+.textcolor{
+color:#17a2b8;
+}
+#rgb_name{
+    font-size:70px;
+    letter-spacing: 4px;
+    font-style: normal;
+    font-family: initial;
+    font-weight: bold;
 }
 
 .hovering{
-    background-color: darkgoldenrod;
+    background-color: #17a2b8;
 }
 .box{
-    height: 100px;
-    border-radius: 10px;
+    height: 140px;
+    border-radius: 13px;
+    transition: background-color 0.3s;
 }
-@media(max-width:700px)
+
+
+body{
+    background: black;
+    padding: 0;
+}
+h1{
+    /* color: info; */
+    margin: 0px -15px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    /* background-color:dimgray; */
+}
+.newgame:hover,.hard:hover,.easy:hover{
+    background-color: #17a2b8;
+    color: white;
+}
+.newgame,.easy,.hard,.result{
+    font-weight: bold;
+    /* color:#17a2b8; */
+} 
+
+
+.btn{
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+@media(max-width:760px)
 {
    .box  {
-        height: 75px;
+        height: 100px;
+    }
+    #rgb_name{
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+    .btn{
+        letter-spacing: 0px;
     }
 }
 
 
-#rgb_name{
-    font-size: larger;
-    font-style: oblique;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: lighter;
-}
 /* .box{
 
     justify-content: center;
@@ -43,18 +87,3 @@
    margin: 20px;
    border-radius: 8px;
 } */
-body{
-    background: black;
-}
-h1{
-    color: chartreuse;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 0px;
-    background-color:dimgray;
-}
-.newgame:hover,.hard:hover,.easy:hover{
-    background-color: darkgoldenrod;
-}
